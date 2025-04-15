@@ -5,6 +5,7 @@
 ### Änderungen
 
 - Erste Version basierend auf dem Grafana-Loki Add-on von bluemaex
-- Aktualisierung auf Loki v2.9.5
+- Aktualisierung auf Loki v3.4.3
 - Anpassungen in der Konfiguration und Dokumentation
+
 

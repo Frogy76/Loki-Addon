@@ -26,7 +26,29 @@ map:
 options:
   days_to_keep: 30
   log_level: info
+  resource_limits:
+    memory: "256M"
+    cpu_percent: 50
+  security:
+    enable_auth: false
+    username: "admin"
+    password: ""
+  advanced:
+    max_chunk_size: "1048576"
+    max_query_series: 500
+    max_query_lookback: "720h"
 schema:
   days_to_keep: int(1,)?
   config_path: str?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
+  resource_limits:
+    memory: str?
+    cpu_percent: int(10,100)?
+  security:
+    enable_auth: bool?
+    username: str?
+    password: password?
+  advanced:
+    max_chunk_size: str?
+    max_query_series: int(0,10000)?
+    max_query_lookback: str?

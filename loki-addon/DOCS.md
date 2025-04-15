@@ -1,47 +1,66 @@
 # Home Assistant Add-on: Grafana Loki
 
-Grafana Loki als Home Assistant Add-on.
+Grafana Loki as a Home Assistant add-on.
 
 ## Installation
 
-Folgen Sie diesen Schritten, um das Add-on zu installieren:
+Follow these steps to install the add-on:
 
-1. Fügen Sie mein Repository zu Ihren Home Assistant Add-on Stores hinzu:
-   `
+1. Add my repository to your Home Assistant add-on stores:
    https://github.com/Frogy76/Loki-Addon
-   `
-2. Installieren Sie das "Grafana Loki" Add-on
-3. Starten Sie das Add-on
-4. Überprüfen Sie die Logs des Add-ons auf Fehler
+2. Install the "Grafana Loki" add-on
+3. Start the add-on
+4. Check the add-on logs for errors
 
-## Konfiguration
+## Configuration
 
 ### Option: days_to_keep
 
-Die Anzahl der Tage, für die die Logs aufbewahrt werden sollen. Standardmäßig 30 Tage.
+The number of days to keep logs. Default is 30 days.
 
 ### Option: config_path
 
-Optional: Pfad zu einer benutzerdefinierten Loki-Konfigurationsdatei.
+Optional: Path to a custom Loki configuration file.
 
 ### Option: log_level
 
-Die Protokollierungsebene für Loki. Mögliche Werte sind: 	race, debug, info, 
-otice, warning, rror, atal.
+The logging level for Loki. Possible values are: trace, debug, info, notice, warning, error, fatal.
 
-## Integration mit Grafana
+### Option: resource_limits
 
-Nachdem Loki installiert ist, können Sie ihn als Datenquelle in Grafana hinzufügen:
+Resource limit configuration:
+- **memory**: Memory limit for Loki (e.g., "256M", "1G")
+- **cpu_percent**: CPU usage limit in percent (10-100)
 
-1. Fügen Sie in Grafana eine neue Datenquelle hinzu
-2. Wählen Sie Loki als Typ
-3. Geben Sie die URL ein: http://IHRE_HOME_ASSISTANT_IP:3100
-4. Speichern und testen Sie die Verbindung
+### Option: security
 
-## Log-Quellen einrichten
+Security settings:
+- **enable_auth**: Enable authentication (true/false)
+- **username**: Username for authentication
+- **password**: Password for authentication
 
-Um Logs in Loki zu senden, können Sie verschiedene Log-Clients verwenden. Eine einfache Methode ist die Verwendung des [Loki-Addons für Fluentd](https://github.com/grafana/loki/tree/main/fluentd/fluent-plugin-grafana-loki), [Fluent Bit](https://github.com/grafana/loki/tree/main/clients/cmd/fluent-bit) oder [Promtail](https://github.com/grafana/loki/tree/main/clients/cmd/promtail).
+### Option: advanced
+
+Advanced settings:
+- **max_chunk_size**: Maximum size of chunks in bytes
+- **max_query_series**: Maximum number of series that can be returned in a query
+- **max_query_lookback**: Maximum time period for backward queries (e.g., "720h" for 30 days)
+
+## Integration with Grafana
+
+After installing Loki, you can add it as a data source in Grafana:
+
+1. In Grafana, add a new data source
+2. Select Loki as the type
+3. Enter the URL: http://YOUR_HOME_ASSISTANT_IP:3100
+4. Save and test the connection
+
+## Setting up Log Sources
+
+To send logs to Loki, you can use various log clients. A simple method is to use the [Loki plugin for Fluentd](https://github.com/grafana/loki/tree/main/fluentd/fluent-plugin-grafana-loki), [Fluent Bit](https://github.com/grafana/loki/tree/main/clients/cmd/fluent-bit), or [Promtail](https://github.com/grafana/loki/tree/main/clients/cmd/promtail).
+
+Example configurations can be found in the /examples directory of this add-on.
 
 ## Support
 
-Wenn Sie Probleme oder Fragen haben, erstellen Sie bitte ein Issue in meinem [GitHub Repository](https://github.com/Frogy76/Loki-Addon).
+If you have problems or questions, please create an issue in my [GitHub Repository](https://github.com/Frogy76/Loki-Addon).
