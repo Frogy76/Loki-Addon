@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 
 # Hier verwenden wir eine neuere Version von Loki
-FROM grafana/loki:3.4.5 as loki-base
+FROM grafana/loki:3.4.3 as loki-base
 FROM ${BUILD_FROM} AS final
 
 COPY rootfs /
