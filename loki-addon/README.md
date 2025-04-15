@@ -13,3 +13,4 @@ Dieses Add-on basiert auf dem ursprünglichen Grafana-Loki Add-on von bluemaex, 
 Für Informationen zur Konfiguration dieses Add-ons, siehe die [Dokumentation](DOCS.md).
 
 Dieses Projekt ist nicht mit Loki affiliiert, sondern ein Community-Projekt. Loki selbst wird unter der [AGPLv3 Lizenz](https://www.gnu.org/licenses/agpl-3.0.de.html) vertrieben.
+
