@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Mein Grafana Loki
+# Home Assistant Add-on: Grafana Loki
 
 Grafana Loki (<https://grafana.com/oss/loki/>) als Home Assistant Add-on.
 

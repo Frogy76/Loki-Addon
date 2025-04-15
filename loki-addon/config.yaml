@@ -1,15 +1,15 @@
 ---
-name: Loki Addon
-version: 1.0.0
-slug: Loki Addon
+name: "Grafana Loki"
+version: "1.0.0"
+slug: "loki-addon"
 description: |
   Grafana Loki ist ein horizontal skalierbares, hochverfügbares, mandantenfähiges Log-Aggregationssystem, inspiriert von Prometheus
 arch:
   - aarch64
   - amd64
-image: "ghcr.io/Frogy 76/ha-addons-loki-{arch}"
+image: "ghcr.io/Frogy76/ha-addons-loki-{arch}"
 startup: system
-url: https://github.com/Frogy 76/home-assistant-addons/tree/master/Loki Addon
+url: "https://github.com/Frogy76/Loki-Addon"
 init: false
 ports:
   3100/tcp: 3100

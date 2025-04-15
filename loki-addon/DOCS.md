@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Mein Grafana Loki
+# Home Assistant Add-on: Grafana Loki
 
 Grafana Loki als Home Assistant Add-on.
 
@@ -8,9 +8,9 @@ Folgen Sie diesen Schritten, um das Add-on zu installieren:
 
 1. Fügen Sie mein Repository zu Ihren Home Assistant Add-on Stores hinzu:
    `
-   https://github.com/Frogy 76/home-assistant-addons
+   https://github.com/Frogy76/Loki-Addon
    `
-2. Installieren Sie das "Mein Grafana Loki" Add-on
+2. Installieren Sie das "Grafana Loki" Add-on
 3. Starten Sie das Add-on
 4. Überprüfen Sie die Logs des Add-ons auf Fehler
 
@@ -44,4 +44,4 @@ Um Logs in Loki zu senden, können Sie verschiedene Log-Clients verwenden. Eine 
 
 ## Support
 
-Wenn Sie Probleme oder Fragen haben, erstellen Sie bitte ein Issue in meinem [GitHub Repository](https://github.com/Frogy 76/home-assistant-addons).
+Wenn Sie Probleme oder Fragen haben, erstellen Sie bitte ein Issue in meinem [GitHub Repository](https://github.com/Frogy76/Loki-Addon).

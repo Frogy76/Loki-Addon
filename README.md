@@ -2,7 +2,7 @@
 
 ## Add-ons
 
-### Mein Grafana Loki
+### Grafana Loki
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 > Grafana Loki ist ein horizontal skalierbares, hochverfügbares Log-Aggregationssystem.
