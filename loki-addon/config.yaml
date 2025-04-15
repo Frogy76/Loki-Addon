@@ -3,11 +3,11 @@ name: "Grafana Loki"
 version: "1.0.1"
 slug: "loki-addon"
 description: |
-  Grafana Loki ist ein horizontal skalierbares, hochverfügbares, mandantenfähiges Log-Aggregationssystem, inspiriert von Prometheus
+  Grafana Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus
 arch:
   - aarch64
   - amd64
-# Temporär den image-Parameter auskommentieren und BUILD_FROM verwenden
+# Temporarily comment out the image parameter and use BUILD_FROM
 # image: "ghcr.io/frogy76/ha-addons-loki-{arch}"
 build_from:
   aarch64: "ghcr.io/home-assistant/aarch64-base:3.21"
