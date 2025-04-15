@@ -7,9 +7,9 @@ description: |
 arch:
   - aarch64
   - amd64
-image: "ghcr.io/Frogy76/ha-addons-loki-{arch}"
+image: "ghcr.io/frogy76/ha-addons-loki-{arch}"
 startup: system
-url: "https://github.com/Frogy76/Loki-Addon"
+url: "https://github.com/frogy76/Loki-Addon"
 init: false
 ports:
   3100/tcp: 3100
