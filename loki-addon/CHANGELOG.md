@@ -1,6 +1,6 @@
 # Changelog
 
-## Mein Grafana Loki 1.0.0 - 2025-04-15
+## Grafana Loki 1.0.1 - 2025-04-15
 
 ### Änderungen
 
