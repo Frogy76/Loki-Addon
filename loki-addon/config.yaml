@@ -1,6 +1,6 @@
 ---
 name: "Grafana Loki"
-version: "1.0.5"
+version: "1.0.6"
 slug: "loki-addon"
 description: |
   Grafana Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus

@@ -1,30 +1,30 @@
 #!/usr/bin/with-contenv bashio
 
-bashio::log.info "Starting Backup Service..."
+bashio::log.info "Starte Backup-Service..."
 
 while true; do
-    # Check for running backups using the Supervisor API instead of bashio::core.backup.is_running
-    if bashio::api.hassio GET /backups/info | jq -e '.data.backups[] | select(.state == "running")' > /dev/null; then
-        bashio::log.info "Home Assistant Backup is running, preparing Loki data..."
+    # Prüfen, ob ein Home Assistant Backup läuft über die Supervisor API
+    if bashio::api.supervisor GET /supervisor/info false | jq -e '.backups_in_progress > 0' > /dev/null; then
+        bashio::log.info "Home Assistant Backup läuft, bereite Loki-Daten vor..."
         
-        # Temporary folder for backup
+        # Temporärer Ordner für Backup
         mkdir -p /tmp/loki_backup
         
-        # Copy important data
-        cp -r /data/loki/wal /tmp/loki_backup/ || bashio::log.warning "Error copying WAL directory"
-        cp -r /data/loki/chunks /tmp/loki_backup/ || bashio::log.warning "Error copying chunks directory"
+        # Kopiere wichtige Daten
+        cp -r /data/loki/wal /tmp/loki_backup/ || bashio::log.warning "Fehler beim Kopieren von wal"
+        cp -r /data/loki/chunks /tmp/loki_backup/ || bashio::log.warning "Fehler beim Kopieren von chunks"
         
-        # Wait until backup is completed
-        while bashio::api.hassio GET /backups/info | jq -e '.data.backups[] | select(.state == "running")' > /dev/null; do
+        # Warte bis das Backup abgeschlossen ist
+        while bashio::api.supervisor GET /supervisor/info false | jq -e '.backups_in_progress > 0' > /dev/null; do
             sleep 5
         done
         
-        # Delete temporary backup files
+        # Lösche temporäre Backup-Dateien
         rm -rf /tmp/loki_backup
         
-        bashio::log.info "Backup preparation completed"
+        bashio::log.info "Backup-Vorbereitung abgeschlossen"
     fi
     
-    # Wait until next backup check
-    sleep 3600 # Check hourly
+    # Warte bis zum nächsten Backup-Zeitpunkt
+    sleep 3600 # Prüfe stündlich
 done

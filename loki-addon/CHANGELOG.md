@@ -1,5 +1,13 @@
 # Changelog
 
+## Grafana Loki 1.0.6 - 2025-04-17
+### Changes
+
+- Fixed backup service script error with bashio API calls
+- Added proper error handling for backup file operations
+- Added JQ as dependency in Dockerfile for API responses processing
+- Improved script execution permissions handling
+
 ## Grafana Loki 1.0.5 - 2025-04-17
 ### Changes
 
