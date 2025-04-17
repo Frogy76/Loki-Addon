@@ -1,33 +1,30 @@
 #!/usr/bin/with-contenv bashio
 
-bashio::log.info "Starte Backup-Service..."
+bashio::log.info "Starting Backup Service..."
 
 while true; do
-    now=
-    next_backup= # Einmal täglich
-
-    # Prüfen, ob ein Home Assistant Backup läuft
-    if bashio::core.backup.is_running; then
-        bashio::log.info "Home Assistant Backup läuft, bereite Loki-Daten vor..."
+    # Check for running backups using the Supervisor API instead of bashio::core.backup.is_running
+    if bashio::api.hassio GET /backups/info | jq -e '.data.backups[] | select(.state == "running")' > /dev/null; then
+        bashio::log.info "Home Assistant Backup is running, preparing Loki data..."
         
-        # Temporärer Ordner für Backup
+        # Temporary folder for backup
         mkdir -p /tmp/loki_backup
         
-        # Kopiere wichtige Daten
-        cp -r /data/loki/wal /tmp/loki_backup/
-        cp -r /data/loki/chunks /tmp/loki_backup/
+        # Copy important data
+        cp -r /data/loki/wal /tmp/loki_backup/ || bashio::log.warning "Error copying WAL directory"
+        cp -r /data/loki/chunks /tmp/loki_backup/ || bashio::log.warning "Error copying chunks directory"
         
-        # Warte bis das Backup abgeschlossen ist
-        while bashio::core.backup.is_running; do
+        # Wait until backup is completed
+        while bashio::api.hassio GET /backups/info | jq -e '.data.backups[] | select(.state == "running")' > /dev/null; do
             sleep 5
         done
         
-        # Lösche temporäre Backup-Dateien
+        # Delete temporary backup files
         rm -rf /tmp/loki_backup
         
-        bashio::log.info "Backup-Vorbereitung abgeschlossen"
+        bashio::log.info "Backup preparation completed"
     fi
     
-    # Warte bis zum nächsten Backup-Zeitpunkt
-    sleep 3600 # Prüfe stündlich
+    # Wait until next backup check
+    sleep 3600 # Check hourly
 done
