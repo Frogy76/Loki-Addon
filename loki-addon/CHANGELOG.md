@@ -1,4 +1,10 @@
 # Changelog
+
+## Grafana Loki 1.0.4 - 2025-04-17
+### Changes
+
+- Switch to debian-base:7.8.2
+
 ## Grafana Loki 1.0.3 - 2025-04-17
 ### Changes
 
