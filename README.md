@@ -5,14 +5,14 @@
 ### Grafana Loki
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-> Grafana Loki ist ein horizontal skalierbares, hochverfügbares Log-Aggregationssystem.
+> Grafana Loki is a horizontally scalable, highly available log aggregation system.
 
 ## Installation
 
-Um dieses Repository zu installieren:
+To install this repository:
 
-1. Navigieren Sie in der Home Assistant Oberfläche zu **Einstellungen** -> **Add-ons** -> **Add-on Store**.
-2. Klicken Sie auf das Menü in der oberen rechten Ecke und wählen Sie **Repositories**.
-3. Fügen Sie folgende URL hinzu: $RepoUrl
-4. Klicken Sie auf **Hinzufügen**.
-5. Nachdem Home Assistant das Repository geladen hat, erscheinen die Add-ons im Store.
+1. In the Home Assistant interface, navigate to **Settings** -> **Add-ons** -> **Add-on Store**.
+2. Click the menu in the upper right corner and select **Repositories**.
+3. Add the following URL: https://github.com/Frogy76/Loki-Addon
+4. Click **Add**.
+5. After Home Assistant has loaded the repository, the add-ons will appear in the store.
