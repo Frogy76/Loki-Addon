@@ -1,6 +1,6 @@
 ---
 name: "Grafana Loki"
-version: "1.0.7"
+version: "1.0.8"
 slug: "loki-addon"
 hassio_api: true
 hassio_role: backup

@@ -4,8 +4,6 @@ auth_enabled: false
 analytics:
   reporting_enabled: false
 
-server: {}
-
 ingester:
   lifecycler:
     address: 127.0.0.1

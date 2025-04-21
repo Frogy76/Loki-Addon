@@ -1,5 +1,10 @@
 # Changelog
 
+## Grafana Loki 1.0.8 - 2025-04-21
+### Changes
+
+- Removed the backup service script
+
 ## Grafana Loki 1.0.6 - 2025-04-17
 ### Changes
 
