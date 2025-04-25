@@ -3,7 +3,7 @@
 ## Grafana Loki 1.0.9 - 2025-04-21
 ### Changes
 
-- Bump to Loki 3.5 
+- Bump Loki back to 3.4.3 
 
 ## Grafana Loki 1.0.8 - 2025-04-21
 ### Changes
